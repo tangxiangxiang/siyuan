@@ -68,7 +68,6 @@ export const getAllModels = () => {
         outline: [],
         backlink: [],
         search: [],
-        inbox: [],
         files: [],
         bookmark: [],
         tag: [],

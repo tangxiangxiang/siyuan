@@ -66,7 +66,6 @@ class App {
                     bookmark: null,
                     tag: null,
                     backlink: null,
-                    inbox: null,
                 }
             },
             ws: new Model({

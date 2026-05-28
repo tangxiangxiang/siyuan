@@ -443,8 +443,7 @@ export abstract class Constants {
             bookmark: {default: "⌃3", custom: "⌃3"},
             tag: {default: "⌃4", custom: "⌃4"},
             dailyNote: {default: "⌃5", custom: "⌃5"},
-            inbox: {default: "⌃6", custom: "⌃6"},
-            backlinks: {default: "⌃7", custom: "⌃7"},
+            backlinks: {default: "⌃6", custom: "⌃6"},
             graphView: {default: "⌃8", custom: "⌃8"},
             globalGraph: {default: "⌃9", custom: "⌃9"},
             riffCard: {default: "⌃0", custom: "⌃0"},
@@ -689,12 +688,6 @@ export abstract class Constants {
                     show: false,
                     icon: "iconAlignCenter",
                     hotkeyLangId: "outline",
-                }, {
-                    type: "inbox",
-                    size: {width: 320, height: 0},
-                    show: false,
-                    icon: "iconInbox",
-                    hotkeyLangId: "inbox",
                 }], [{
                     type: "bookmark",
                     size: {width: 232, height: 0},

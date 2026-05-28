@@ -1,7 +1,7 @@
 type TPluginDockPosition = "LeftTop" | "LeftBottom" | "RightTop" | "RightBottom" | "BottomLeft" | "BottomRight"
 type TDockPosition = "Left" | "Right" | "Bottom"
 type TWS = "main" | "filetree" | "protyle" | "backlink" | "bookmark" | "graph" | "outline" | "tag"
-type TDock = "file" | "outline" | "inbox" | "bookmark" | "tag" | "graph" | "globalGraph" | "backlink"
+type TDock = "file" | "outline" | "bookmark" | "tag" | "graph" | "globalGraph" | "backlink"
 type TTab = "Outline" | "Graph" | "Backlink" | "Asset" | "Editor" | "Search" | "siyuan-card"
 type TOperation =
     "insert"
@@ -81,7 +81,7 @@ type TEventBus = "ws-main" | "sync-start" | "sync-end" | "sync-fail" |
     "click-blockicon" | "click-editorcontent" | "click-pdf" | "click-editortitleicon" | "click-flashcard-action" |
     "open-noneditableblock" |
     "open-menu-blockref" | "open-menu-fileannotationref" | "open-menu-tag" | "open-menu-link" | "open-menu-image" |
-    "open-menu-av" | "open-menu-content" | "open-menu-breadcrumbmore" | "open-menu-doctree" | "open-menu-inbox" |
+    "open-menu-av" | "open-menu-content" | "open-menu-breadcrumbmore" | "open-menu-doctree" |
     "open-siyuan-url-plugin" | "open-siyuan-url-block" | "opened-notebook" |
     "closed-notebook" |
     "paste" |
@@ -532,7 +532,6 @@ interface ISiyuan {
             bookmark: import("../mobile/dock/MobileBookmarks").MobileBookmarks | null,
             tag: import("../mobile/dock/MobileTags").MobileTags | null,
             backlink: import("../mobile/dock/MobileBacklinks").MobileBacklinks | null,
-            inbox: import("../layout/dock/Inbox").Inbox | null,
         } & { [key: string]: import("../layout/Model").Model | any };
     },
     user?: {
@@ -850,7 +849,6 @@ interface IModels {
     graph: import("../layout/dock/Graph").Graph[],
     outline: import("../layout/dock/Outline").Outline[]
     backlink: import("../layout/dock/Backlink").Backlink[]
-    inbox: import("../layout/dock/Inbox").Inbox[]
     files: import("../layout/dock/Files").Files[]
     bookmark: import("../layout/dock/Bookmark").Bookmark[]
     tag: import("../layout/dock/Tag").Tag[]

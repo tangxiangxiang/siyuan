@@ -221,11 +221,7 @@ export const getAllLayout = () => {
 };
 
 const initInternalDock = (dockItem: Config.IUILayoutDockTab[]) => {
-    dockItem.forEach((existSubItem, index) => {
-        if (window.siyuan.isPublish && existSubItem.type === "inbox") {
-            dockItem.splice(index, 1);
-            return;
-        }
+    dockItem.forEach((existSubItem) => {
         if (existSubItem.hotkeyLangId) {
             existSubItem.title = window.siyuan.languages[existSubItem.hotkeyLangId];
             existSubItem.hotkey = window.siyuan.config.keymap.general[existSubItem.hotkeyLangId].custom;
@@ -746,7 +742,7 @@ export const addResize = (obj: Layout | Wnd, after = true) => {
         let minSize = 232;
         Array.from(element.querySelectorAll(".file-tree")).find((item) => {
             if (item.classList.contains("sy__backlink") || item.classList.contains("sy__graph")
-                || item.classList.contains("sy__globalGraph") || item.classList.contains("sy__inbox")) {
+                || item.classList.contains("sy__globalGraph")) {
                 if (!item.classList.contains("fn__none") && !hasClosestByClassName(item, "fn__none")) {
                     minSize = 320;
                     return true;
@@ -876,7 +872,7 @@ export const addResize = (obj: Layout | Wnd, after = true) => {
         const previousElement = resizeElement.previousElementSibling as HTMLElement;
         const nextElement = resizeElement.nextElementSibling as HTMLElement;
         if (previousElement && nextElement) {
-            const bigType = ["graph", "inbox", "globalGraph", "backlink"];
+            const bigType = ["graph", "globalGraph", "backlink"];
             let size = 232;
             nextElement.style.transition = "none";
             previousElement.style.transition = "none";
