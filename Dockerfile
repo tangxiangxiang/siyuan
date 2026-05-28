@@ -40,7 +40,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build --mount=type=cache,target=/g
     go build -tags fts5 -v -ldflags "-s -w"
 
 FROM alpine:latest
-LABEL maintainer="Liang Ding<845765@qq.com>"
+LABEL maintainer="txx<2856873434@qq.com>"
 
 RUN apk add --no-cache ca-certificates tzdata su-exec
 
